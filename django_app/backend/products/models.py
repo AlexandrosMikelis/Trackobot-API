@@ -15,7 +15,7 @@ class Product(models.Model):
     
     name = models.CharField(max_length=40,null=True)
     barcode = models.CharField(max_length=48,null=True)
-    quantity = models.IntegerField(null=True)
+    quantity = models.IntegerField(null=True, default=1)
     type = models.CharField(choices=TYPES,max_length=30,null=True)
     In = models.BooleanField(default=False)
     Out = models.BooleanField(default=True)

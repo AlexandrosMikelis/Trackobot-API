@@ -6,7 +6,7 @@ import uuid
 TYPES = {
     ("Closet","CLOSET"),
     ("Cabinet","CABINET"),
-    ("Shelf","sHELF"),
+    ("Shelf","SHELF"),
 }
 # Create your models here.
 class Workspace(models.Model):
@@ -19,7 +19,7 @@ class Workspace(models.Model):
     type = models.CharField(choices=TYPES,max_length=30,null=True)
     ioCrossline = models.JSONField(null=True)
     created_on = models.DateTimeField(auto_now_add=True,null=True)
-    
+    source = models.CharField(max_length = 100,null=True)
     class Meta:
         db_table = "workspaces"
     
